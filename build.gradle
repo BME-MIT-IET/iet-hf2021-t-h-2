@@ -1,11 +1,15 @@
+plugins {
+  id "org.sonarqube" version "3.2.0"
+}
+
 apply plugin: "idea"
 apply plugin: "java"
 apply plugin: "maven"
 
-task wrapper(type: Wrapper) {
+/*task wrapper(type: Wrapper) {
 	gradleVersion = '2.0'
 	distributionUrl = "http://services.gradle.org/distributions/gradle-${gradleVersion}-all.zip"
-}
+}*/
 
 sourceSets {
 	main {
@@ -70,9 +74,7 @@ tasks.withType(Test) {
 	systemProperties = System.getProperties()
 }
 
-plugins {
-  id "org.sonarqube" version "3.2.0"
-}
+
 
 sonarqube {
   properties {
