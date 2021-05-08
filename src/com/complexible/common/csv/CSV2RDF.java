@@ -127,7 +127,8 @@ public class CSV2RDF implements Runnable {
 		catch (Exception e) {
 			throw new RuntimeException(e);
 		}
-		System.out.printf("Converted %,d rows to %,d triples%n", inputRows, outputTriples);
+		logger.log(Level.INFO, ()-> "Converted " + inputRows + " to " + outputTriples + " triples");
+
 	}
 
 	private static char toChar(String value) {
@@ -429,13 +430,15 @@ public class CSV2RDF implements Runnable {
 	}
 
 	public static void main(String[] args) throws Exception {
+		final Logger logger = Logger.getLogger(CSV2RDF.class.getName());
+
 		try {
 			Cli.<Runnable> builder("csv2rdf").withDescription("Converts a CSV file to RDF based on a given template")
 			                .withDefaultCommand(CSV2RDF.class).withCommand(CSV2RDF.class).withCommand(Help.class)
 			                .build().parse(args).run();
 		}
 		catch (Exception e) {
-			System.err.println("ERROR: " + e.getMessage());
+			logger.log(Level.WARNING, e.getMessage());
 			e.printStackTrace();
 		}
 	}
