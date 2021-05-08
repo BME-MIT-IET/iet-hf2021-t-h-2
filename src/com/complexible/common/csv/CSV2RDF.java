@@ -18,6 +18,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -85,10 +87,12 @@ public class CSV2RDF implements Runnable {
 		Preconditions.checkArgument(files.size() >= 3, "Missing arguments");
 		Preconditions.checkArgument(files.size() <= 3, "Too many arguments");
 
+		final Logger logger = Logger.getLogger(CSV2RDF.class.getName());
+
 		File templateFile = new File(files.get(0));
 		File inputFile = new File(files.get(1));
 		File outputFile =  new File(files.get(2));
-		System.out.println("CSV to RDF conversion started...");
+		logger.log(Level.INFO, "CSV to RDF conversion started...");
 		System.out.println("Template: " + templateFile);
 		System.out.println("Input   : " + inputFile);
 		System.out.println("Output  : " + outputFile);
