@@ -93,9 +93,10 @@ public class CSV2RDF implements Runnable {
 		File inputFile = new File(files.get(1));
 		File outputFile =  new File(files.get(2));
 		logger.log(Level.INFO, "CSV to RDF conversion started...");
-		System.out.println("Template: " + templateFile);
-		System.out.println("Input   : " + inputFile);
-		System.out.println("Output  : " + outputFile);
+		logger.log(Level.INFO, ()->"Template: " + templateFile);
+		logger.log(Level.INFO, ()->"Input   : " + inputFile);
+		logger.log(Level.INFO, ()->"Output  : " + outputFile);
+	
 		
 		try {
 			Reader in = Files.newReader(inputFile, INPUT_CHARSET);
