@@ -7,3 +7,4 @@ A projekttel főként az src\com\complexible\common\csv\CSV2RDF.java fájlra kon
 	-egységtesztek készítése
 	-BDD tesztek készítése
 	-manuális tesztek megtervezése, végrehajtása
+=======
