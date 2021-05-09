@@ -424,8 +424,12 @@ public class CSV2RDF implements Runnable {
 
 		public Literal generate(int rowIndex, String[] row) {
 			String value = applyTemplate(rowIndex, row);
-			return datatype == null ? lang == null ? FACTORY.createLiteral(value) : FACTORY.createLiteral(value, lang)
-			                : FACTORY.createLiteral(value, datatype);
+			if(datatype == null){
+				return FACTORY.createLiteral(value);
+			} else if(lang == null){
+				FACTORY.createLiteral(value, lang);
+			}
+			return FACTORY.createLiteral(value, datatype);
 		}
 	}
 
