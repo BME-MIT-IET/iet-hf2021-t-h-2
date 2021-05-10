@@ -298,7 +298,7 @@ public class CSV2RDF implements Runnable {
 		}
 	}
 
-	private static abstract class ValueProvider {
+	public static abstract class ValueProvider {
 		 private final String placeholder = UUID.randomUUID().toString();
 		 private boolean isHash;
 
@@ -314,14 +314,14 @@ public class CSV2RDF implements Runnable {
 		 protected abstract String provideValue(int rowIndex, String[] row);
 	}
 
-	private static class RowValueProvider extends ValueProvider {
+	public static class RowValueProvider extends ValueProvider {
 		private final int colIndex;
 
-		private RowValueProvider(int colIndex) {
+		public RowValueProvider(int colIndex) {
 			this.colIndex = colIndex;
 		}
 
-		protected String provideValue(int rowIndex, String[] row) {
+		public String provideValue(int rowIndex, String[] row) {
 			return row[colIndex];
 		}
 	}
