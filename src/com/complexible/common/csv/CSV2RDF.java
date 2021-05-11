@@ -125,12 +125,12 @@ public class CSV2RDF implements Runnable {
 		System.out.printf("Converted %,d rows to %,d triples%n", inputRows, outputTriples);
 	}
 
-	private static char toChar(String value) {
+	public static char toChar(String value) {
 		Preconditions.checkArgument(value.length() == 1, "Expecting a single character but got %s", value);
 		return value.charAt(0);
 	}
 
-	private static ParserConfig getParserConfig() {
+	public static ParserConfig getParserConfig() {
 		ParserConfig config = new ParserConfig();
 
 		Set<RioSetting<?>> aNonFatalErrors = Sets.<RioSetting<?>> newHashSet(
@@ -332,15 +332,16 @@ public class CSV2RDF implements Runnable {
 		}
 	}
 
-	private static class UUIDProvider extends ValueProvider {
+	public static class UUIDProvider extends ValueProvider {
 		private String value = null;
 		private int generatedRow = -1;
 		
-		protected String provideValue(int rowIndex, String[] row) {
+		public String provideValue(int rowIndex, String[] row) {
 			if (value == null || generatedRow != rowIndex) {
 				value = UUID.randomUUID().toString();
 				generatedRow = rowIndex;
 			}
+			
 			return value;
 		}
 	}
