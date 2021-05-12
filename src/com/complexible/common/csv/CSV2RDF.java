@@ -326,7 +326,7 @@ public class CSV2RDF implements Runnable {
 		}
 	}
 
-	private static class RowNumberProvider extends ValueProvider {
+	public static class RowNumberProvider extends ValueProvider {
 		protected String provideValue(int rowIndex, String[] row) {
 			return String.valueOf(rowIndex);
 		}
