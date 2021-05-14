@@ -9,7 +9,7 @@
 	
 	<property name="project.name" value="csv2rdf"/>
 	<property name="project.version" value="0.1"/>
-	
+	<property name="sonar.exclusions" value="src/test/java/cucumber/CSV2RDFStepDefinitions.java"/>
 	<property name="mainclass" value="com.complexible.common.csv.CSV2RDF"/>
 	
 	<path id="project.class.path">
