@@ -2,20 +2,17 @@ package test;
 
 import static org.junit.Assert.*;
 
-import java.util.Set;
+
 import java.util.UUID;
 
 import org.junit.Test;
 
-import org.openrdf.rio.ParserConfig;
-import org.openrdf.rio.RioSetting;
-import org.openrdf.rio.helpers.BasicParserSettings;
 
 import com.complexible.common.csv.CSV2RDF;
 import com.complexible.common.csv.CSV2RDF.RowValueProvider;
 import com.complexible.common.csv.CSV2RDF.UUIDProvider;
 import com.complexible.common.csv.CSV2RDF.RowNumberProvider;
-import com.google.common.collect.Sets;
+
 
 
 
@@ -26,9 +23,9 @@ public class JunitTest {
 	public void rowValueProviderTest() {
 		
 		String[] test = {"car", "mercedes", "audi"};
-		RowValueProvider prov = new RowValueProvider(0);
+		RowValueProvider prov = new RowValueProvider(1);
 		String result =	prov.provideValue(1, test);
-		assertEquals("car", result);
+		assertEquals("mercedes", result);
 		
 	}
 	
@@ -41,24 +38,18 @@ public class JunitTest {
 	}
 	
 	@Test
-	public void parserConfigTest() {
-		ParserConfig expected = new ParserConfig();
+	public void toCharExceptionTest() {
 		
-		Set<RioSetting<?>> aNonFatalErrors = Sets.<RioSetting<?>> newHashSet(
-                BasicParserSettings.FAIL_ON_UNKNOWN_DATATYPES, BasicParserSettings.FAIL_ON_UNKNOWN_LANGUAGES);
-
-		expected.setNonFatalErrors(aNonFatalErrors);
-
-		expected.set(BasicParserSettings.FAIL_ON_UNKNOWN_DATATYPES, false);
-		expected.set(BasicParserSettings.FAIL_ON_UNKNOWN_LANGUAGES, false);
-		expected.set(BasicParserSettings.VERIFY_DATATYPE_VALUES, false);
-		expected.set(BasicParserSettings.VERIFY_LANGUAGE_TAGS, false);
-		expected.set(BasicParserSettings.VERIFY_RELATIVE_URIS, false);
-		
-		ParserConfig result = CSV2RDF.getParserConfig();
-		assertNotEquals(expected, result);
+		try{
+			String str = "Ford";
+			CSV2RDF.toChar(str);
+			  fail("Exception not thrown");
+			}catch(Exception e){
+			  assertEquals("Expecting a single character but got Ford",e.getMessage());
+			}
 		
 	}
+	
 	
 	@Test
 	public void UUIDProviderTest() {

@@ -130,7 +130,7 @@ public class CSV2RDF implements Runnable {
 		return value.charAt(0);
 	}
 
-	public static ParserConfig getParserConfig() {
+	private static ParserConfig getParserConfig() {
 		ParserConfig config = new ParserConfig();
 
 		Set<RioSetting<?>> aNonFatalErrors = Sets.<RioSetting<?>> newHashSet(
