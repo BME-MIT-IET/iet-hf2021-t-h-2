@@ -2,12 +2,5 @@
 /bin
 /build
 /dist
-classes/com/complexible/common/csv/CSV2RDF$BNodeGenerator.class
-classes/test/JunitTest.class
-*.class
-*.css
-*.exec
-*.html
-*.gif
-*.js
-*.xml
+/.idea
+
