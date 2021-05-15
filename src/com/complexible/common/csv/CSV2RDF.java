@@ -446,7 +446,6 @@ public class CSV2RDF implements Runnable {
 		}
 		catch (Exception e) {
 			logger.log(Level.WARNING, e.getMessage());
-			e.printStackTrace();
 		}
 	}
 }
