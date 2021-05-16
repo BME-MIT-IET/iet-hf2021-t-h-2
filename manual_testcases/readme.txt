@@ -1,1 +1,0 @@
-Ebben a mappában találhatók a manuális tesztesetek.
