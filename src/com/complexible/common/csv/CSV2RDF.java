@@ -134,7 +134,7 @@ public class CSV2RDF implements Runnable {
 
 	}
 
-	private static char toChar(String value) {
+	public static char toChar(String value) {
 		Preconditions.checkArgument(value.length() == 1, "Expecting a single character but got %s", value);
 		return value.charAt(0);
 	}
@@ -307,7 +307,9 @@ public class CSV2RDF implements Runnable {
 		}
 	}
 
-	private abstract static class ValueProvider {
+
+	public static abstract class ValueProvider {
+
 		 private final String placeholder = UUID.randomUUID().toString();
 		 private boolean isHash;
 
@@ -323,33 +325,34 @@ public class CSV2RDF implements Runnable {
 		 protected abstract String provideValue(int rowIndex, String[] row);
 	}
 
-	private static class RowValueProvider extends ValueProvider {
+	public static class RowValueProvider extends ValueProvider {
 		private final int colIndex;
 
-		private RowValueProvider(int colIndex) {
+		public RowValueProvider(int colIndex) {
 			this.colIndex = colIndex;
 		}
 
-		protected String provideValue(int rowIndex, String[] row) {
+		public String provideValue(int rowIndex, String[] row) {
 			return row[colIndex];
 		}
 	}
 
-	private static class RowNumberProvider extends ValueProvider {
+	public static class RowNumberProvider extends ValueProvider {
 		protected String provideValue(int rowIndex, String[] row) {
 			return String.valueOf(rowIndex);
 		}
 	}
 
-	private static class UUIDProvider extends ValueProvider {
+	public static class UUIDProvider extends ValueProvider {
 		private String value = null;
 		private int generatedRow = -1;
 		
-		protected String provideValue(int rowIndex, String[] row) {
+		public String provideValue(int rowIndex, String[] row) {
 			if (value == null || generatedRow != rowIndex) {
 				value = UUID.randomUUID().toString();
 				generatedRow = rowIndex;
 			}
+			
 			return value;
 		}
 	}
