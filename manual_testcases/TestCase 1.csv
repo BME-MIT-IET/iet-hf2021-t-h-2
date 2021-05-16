@@ -1,0 +1,8 @@
+﻿Név:;Build
+Leírás: ;A felhasználó elkészíti a buildet
+Előfeltétel:;A felhasználó a programkönyvtárban tartózkodik, és rendelkezik az ant eszközzel, valamint minden szükséges komponens (pl. build.xml) megtalálható a könyvtárban
+Utófeltétel: ;-
+Trigger:;A felhasználó kiadja az ant clean dist parancsot a programkönyvtárban.
+Normál lefutás:;A build végrehajtásra került, elkészülnek a futtatáshoz szükséges alkönyvtárak
+Alternatív lefutások:;"- Amennyiben a rendszer nem értelmezi az ant clean dist parancsot, a build nem készül el. (például Ant hiánya)
+- ha egy szükséges fájl hiányzik a könyvtárból, a build nem készül el. ( pl. build.xml hiányzik)"

@@ -1,0 +1,7 @@
+﻿Név:;Help screen
+Leírás: ;A felhasználó segítségséget kér
+Előfeltétel:;A felhasználó korábban lebuildelte a projektet, és a programkönyvtárban tartózkodik.
+Utófeltétel: ;-
+Trigger:;A felhasználó kiadja a java -jar dist/lib/csv2rdf.jar help convert parancsot a programkönyvtárban
+Normál lefutás:;A felhasználó számára segítség jelenik meg
+Alternatív lefutások:;Amennyiben a rendszer nem értelmezi a java parancsot, a build nem készül el (Java hiánya)
