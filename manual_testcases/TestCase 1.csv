@@ -1,4 +1,4 @@
-﻿Név,Build
+﻿Név:,Build
 Leírás:,A felhasználó elkészíti a buildet
 Előfeltétel:,A felhasználó a programkönyvtárban tartózkodik és rendelkezik az ant eszközzel valamint minden szükséges komponens (pl. build.xml) megtalálható a könyvtárban
 Utófeltétel:,-
