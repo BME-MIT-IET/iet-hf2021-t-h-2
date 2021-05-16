@@ -16,12 +16,14 @@ TestCase2
 #### First case:
 
 Running the command `java -jar dist/lib/csv2rdf.jar help convert`
-without Java installed. \#\#\#\#\# Result: Nothing happens,
-unfortunately no ERROR message about Java not being installed.
-\#\#\#\#\# Solution: Java needs to be installed on the computer.
-\#\#\#\# Second case: Running the command
-`java -jar dist/lib/csv2rdf.jar help convert` with Java installed.
-\#\#\#\#\# Result:
+without Java installed. 
+##### Result: 
+Nothing happens, unfortunately no ERROR message about Java not being installed.
+##### Solution: 
+Java needs to be installed on the computer.
+#### Second case: 
+Running the command `java -jar dist/lib/csv2rdf.jar help convert` with Java installed.
+##### Result:
 
     NAME 
         csv2rdf convert - Runs the conversion. 
