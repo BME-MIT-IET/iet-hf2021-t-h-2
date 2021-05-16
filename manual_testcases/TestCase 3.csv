@@ -1,0 +1,8 @@
+﻿Név:,Konverzió
+Leírás: ,A felhasználó végrehajt egy konverziót
+Előfeltétel:,A felhasználó rendelkezik egy megfelelő csv formátumú fájllal valamint egy template fájllal és a programkönyvtárban tartózkodik. 
+Utófeltétel: ,Legenerálódott az RDF output a megadott csv és template fájlok alapján.
+Trigger:,A felhasználó kiadja a java -jar dist/lib/csv2rdf.jar examples/cars/template.ttl examples/cars/cars.csv cars.ttl parancsot a programkönyvtárban
+Normál lefutás:,Az argumentumokban megadott fájlok alapján végrehajtódik a konverzió.
+Alternatív lefutások:,"- Amennyiben az egyik argumentumban megadott fájl nem található vagy a rendszer nem tudja értelmezni a java parancsot sikertelen.
+- Akkor is sikertelen ha a megadott fájlokban tartalmi hiba van például hiányzó header a csv fájlban."
