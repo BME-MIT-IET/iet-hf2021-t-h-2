@@ -166,17 +166,23 @@ public class CSV2RDF implements Runnable {
 
 		private String insertPlaceholders(List<String> cols, File templateFile) throws IOException, NullPointerException{
 			Pattern p = Pattern.compile("([\\$|\\#]\\{[^}]*\\})");
-
+			final Logger logger = Logger.getLogger(CSV2RDF.class.getName());
 			Matcher m = p.matcher(Files.toString(templateFile, INPUT_CHARSET));
 			StringBuffer sb = new StringBuffer();
 			while (m.find()) {
-				String var = m.group(1);
-				String varName = var.substring(2, var.length() - 1);
-				ValueProvider valueProvider = valueProviderFor(varName, cols);
-				Preconditions.checkArgument(valueProvider != null, "Invalid template variable", var);
-				valueProvider.isHash = (var.charAt(0) == '#');
-				m.appendReplacement(sb, valueProvider.placeholder);
-				valueProviders.add(valueProvider);
+				try{
+					String var = m.group(1);
+					String varName = var.substring(2, var.length() - 1);
+					ValueProvider valueProvider = valueProviderFor(varName, cols);
+					Preconditions.checkArgument(valueProvider != null, "Invalid template variable", var);
+					valueProvider.isHash = (var.charAt(0) == '#');
+					m.appendReplacement(sb, valueProvider.placeholder);
+					valueProviders.add(valueProvider);
+				}
+				catch(NullPointerException e){
+					logger.log(Level.WARNING, e.getMessage());
+				}
+				
 			}
 			m.appendTail(sb);
 
