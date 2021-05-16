@@ -1,4 +1,4 @@
-Manualális tesztelés
+Manuális tesztelés
 =======
 Feladatom volt a program helyes működésének vizsgálatát segítő manuális tesztek tervezése, megírása. A program fő funkcionalitása a csv fájlból rdf fájl készítése, így a tesztek készítése során erre került a legnagyobb hangsúly.
 
