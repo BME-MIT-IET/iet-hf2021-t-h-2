@@ -22,12 +22,14 @@ TestCase3
 
 Running the command
 `java -jar dist/lib/csv2rdf.jar examples/cars/template.ttl examples/cars/cars.csv cars.ttl`
-without Java installed. \#\#\#\#\# Result: Nothing happens,
-unfortunately no ERROR message about Java not being installed.
-\#\#\#\#\# Solution: Java needs to be installed on the computer.
-\#\#\#\# Second case: Running the command
-`java -jar dist/lib/csv2rdf.jar examples/cars/template.ttl examples/cars/cars.csv cars.ttl`
-with Java installed, but no header in the .csv file. \#\#\#\#\# Result:
+without Java installed. 
+##### Result: 
+Nothing happens, unfortunately no ERROR message about Java not being installed.
+##### Solution: 
+Java needs to be installed on the computer.
+#### Second case: 
+Running the command `java -jar dist/lib/csv2rdf.jar examples/cars/template.ttl examples/cars/cars.csv cars.ttl` with Java installed, but no header in the .csv file. 
+##### Result:
 
     INFO: CSV to RDF conversion started... 
     Template: examples\cars\template.ttl 
@@ -55,10 +57,8 @@ with Java installed, but no header in the .csv file. \#\#\#\#\# Result:
 
 #### Third case:
 
-Running the command
-`java -jar dist/lib/csv2rdf.jar examples/cars/template.ttl examples/cars/cars.csv cars.ttl`
-with Java installed, but no .csv file in the directory. \#\#\#\#\#
-Result:
+Running the command `java -jar dist/lib/csv2rdf.jar examples/cars/template.ttl examples/cars/cars.csv cars.ttl` with Java installed, but no .csv file in the directory. 
+##### Result:
 
     INFO: CSV to RDF conversion started... 
     Template: examples\cars\template.ttl 
@@ -83,9 +83,8 @@ Result:
 
 #### Fourth case:
 
-Running the command
-`java -jar dist/lib/csv2rdf.jar examples/cars/template.ttl examples/cars/cars.csv cars.ttl`
-and executing the conversion. \#\#\#\#\# Result:
+Running the command `java -jar dist/lib/csv2rdf.jar examples/cars/template.ttl examples/cars/cars.csv cars.ttl` and executing the conversion. 
+##### Result:
 
     INFO: CSV to RDF conversion started... 
     Template: examples\cars\template.ttl 
