@@ -2,7 +2,7 @@ Manual test cases
 =======
 
 This folder contains the manual test cases for the project.
-
+ 
 TestCase 1:
 -------
 The first testcase was made to test the building process.
