@@ -16,16 +16,31 @@ TestCase1
 
 #### First case:
 
-Running the command `ant clean dist` without Ant installed. \#\#\#\#\#
-Result: 'ant' is not recognized as an internal or external command,
-operable program or batch file. The build fails. \#\#\#\#\# Solution:
-Ant needs to be installed on the computer. \#\#\#\# Second case: Running
-the command `ant clean dist` with Ant installed, but no build.xml file
-in the project. \#\#\#\#\# Result: Buildfile: build.xml does not exist!
-Build failed The build fails. \#\#\#\#\# Solution: build.xml needs to be
-implemented in the project. \#\#\#\# Third case: Running the command
-`ant clean dist` with Ant being installed and the build.xml file
-implemented in the project.
+Running the command `ant clean dist` without Ant installed.
+
+##### Result:
+
+    'ant' is not recognized as an internal or external command,
+    operable program or batch file. The build fails.
+
+##### Solution: Ant needs to be installed on the computer. 
+
+#### Second case: 
+
+Running the command `ant clean dist` with Ant installed, but no build.xml file
+in the project. 
+
+##### Result: 
+
+    Buildfile: build.xml does not exist!
+    Build failed 
+
+The build fails. 
+    
+##### Solution: build.xml needs to be implemented in the project. 
+
+#### Third case: 
+Running the command `ant clean dist` with Ant being installed and the build.xml file implemented in the project.
 
     init: 
         [mkdir] Created dir: C:\users\Nina\Documents\GitHub\iet-hf2021-t-h-2\build 
