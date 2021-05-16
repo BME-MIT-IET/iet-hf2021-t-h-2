@@ -1,6 +1,6 @@
 ﻿Név,Build
 Leírás:,A felhasználó elkészíti a buildet
-Előfeltétel:,A felhasználó a programkönyvtárban tartózkodik, és rendelkezik az ant eszközzel, valamint minden szükséges komponens (pl. build.xml) megtalálható a könyvtárban
+Előfeltétel:,A felhasználó a programkönyvtárban tartózkodik és rendelkezik az ant eszközzel valamint minden szükséges komponens (pl. build.xml) megtalálható a könyvtárban
 Utófeltétel:,-
 Trigger:,A felhasználó kiadja az ant clean dist parancsot a programkönyvtárban.
 Normál lefutás:,A build végrehajtásra került, elkészülnek a futtatáshoz szükséges alkönyvtárak
